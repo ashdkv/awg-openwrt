@@ -12,26 +12,16 @@ jobs:
     strategy:
       matrix:
         build_env:
-          - tag: "22.03.4"
-            pkgarch: mips_24kc
-            target: ath79
-            subtarget: nand
-            vermagic: "5c9be91b90bda5403fe3a7c4e8ddb26f"
-          - tag: "23.05.0"
-            pkgarch: mipsel_24kc
-            target: ramips
-            subtarget: mt7621
-            vermagic: "9c242f353867f49a96054ff8c9f2c460"
-          - tag: "23.05.2"
-            pkgarch: mipsel_24kc
-            target: ramips
-            subtarget: mt7621
-            vermagic: "9c242f353867f49a96054ff8c9f2c460"
+          - tag: "23.05.5"
+            pkgarch: aarch64_generic
+            target: rockchip
+            subtarget: armv8
+            vermagic: "95406503857f757c242adad1c14f7d60"
 
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: openwrt/openwrt
+          repository: friendlyarm/friendlywrt
           ref: v${{ matrix.build_env.tag }}
           fetch-depth: 0
 
