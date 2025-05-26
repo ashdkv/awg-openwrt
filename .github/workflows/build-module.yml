@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         build_env:
-          - tag: "master-v23.05"
+          - tag: "23.05.5"
             pkgarch: aarch64_generic
             target: rockchip
             subtarget: armv8
@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: friendlyarm/friendlywrt
+          repository: ashdkv/friendlywrt
           ref: v${{ matrix.build_env.tag }}
           fetch-depth: 0
 
